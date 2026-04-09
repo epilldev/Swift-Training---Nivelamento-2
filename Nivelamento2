@@ -1,1 +1,122 @@
+//
+//  main.swift
+//  AtividadeAvaliativaNivelamento
+//
+//  Created by Oliveira, Felipe Joaquim de on 09/04/26.
+//
+
+import Foundation
+
+struct Contato {
+    
+    var id: Int
+    var nome: String
+    var email: String
+    var telefone: String
+    var idade: Int
+    
+}
+
+var listaRegistros: [Contato] = []
+
+repeat{
+    
+    print("==============================")
+    print("         MENU PRINCIPAL       ")
+    print("==============================")
+    
+    print("1 - CADASTRAR CONTATO")
+    print("2 - LISTAR CONTATOS")
+    print("3 - REMOVER CONTATO")
+    print("4 - EDITAR CONTATO")
+    print("5 - SAIR")
+    
+    var escolha:String = readLine() ?? ""
+    
+    switch escolha {
+    case "1":
+        cadastrarContato()
+    case "2":
+        listarContatos()
+    case "3":
+        removerContato()
+    case "4":
+        editarContato()
+    case "5":
+    }
+    
+}while true
+
+
+//funcao para cadastrar
+func cadastrarContato(){
+    
+    var novoContato:Contato = Contato(id: 0,nome: "", email: "", telefone: "", idade: 0)
+    
+    print("Digite o nome:")
+    novoContato.nome = readLine() ?? ""
+    
+    print("Digite sua idade:")
+    novoContato.idade = Int(readLine() ?? "0") ?? 0
+    
+    print("Digite o telefone:")
+    novoContato.telefone = readLine() ?? ""
+    
+    print("Digite o email:")
+    novoContato.email = readLine() ?? ""
+    
+    novoContato.id = listaRegistros.count + 1
+    
+    listaRegistros.append(novoContato)
+    
+    print("Contato cadastrado com sucesso!")
+}
+
+
+//funcao para listar
+func listarContatos(){
+    
+    for contato in listaRegistros{
+        print("---------------------------------")
+        print("       LISTA DE CONTATOS         ")
+        print("---------------------------------")
+        print("ID: \(contato.id)")
+        print("Nome: \(contato.nome)")
+        print("Idade: \(contato.idade)")
+        print("Telefone: \(contato.telefone)")
+        print("Email: \(contato.email)")
+        print("---------------------------------")
+    }
+    
+}
+
+//funcao para remover
+func removerContato(){
+    print("---------------------------------")
+    print("       REMOVER CONTATO         ")
+    print("---------------------------------")
+    print("Digite o nome do contato que deseja remover:")
+    var nome: String = readLine() ?? ""
+    for i in 0...listaRegistros.count{
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
